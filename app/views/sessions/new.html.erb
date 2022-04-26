@@ -1,0 +1,20 @@
+<p<%= notice %></p>
+<h1>Sign in</h1>
+
+<form action="/sessions" method = "post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+
+  <label for="email">Email</label>
+  <br/>
+  <input type="email" id="email" name="user[email]" />
+
+  <br/>
+  <label for="password">Password</label>
+  <br/>
+  <input type="password" id="password" name="user[password]" />
+  <br/>
+  <br/>
+  <input type="submit" value="Sign in">
+</form>
+<br/>
+<%= link_to "Register", register_path, class: 'btn btn-primary' %>
