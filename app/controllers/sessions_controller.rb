@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to posts_path
     else
-      render :new, notice: "Invalid email or password"
+      redirect_to sign_in_path, notice: "Email or Password not valid! Try again.."
     end
     #then compare password
 
