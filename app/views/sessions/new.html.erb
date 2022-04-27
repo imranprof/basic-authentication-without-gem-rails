@@ -1,26 +1,28 @@
 
-  <div class="notice">
-    <%= notice %>
+
+  <div class="card">
+    <h4 class="card-header">Sign In</h4>
+    <div class="card-body">
+      <form action="/sessions" method = "post">
+        <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+        <br/>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" name="user[email]" placeholder="Enter your email">
+        </div>
+
+
+        <br/>
+        <br/>
+        <div class="form-group">
+          <input type="password" class="form-control" id="password" name="user[password]" placeholder="Enter your password">
+        </div>
+
+        <br/>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+      <br/>
+    </div>
   </div>
 
-
-
-<h1>Sign in</h1>
-
-<form action="/sessions" method = "post">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
-
-  <label for="email">Email</label>
-  <br/>
-  <input type="email" id="email" name="user[email]" />
-
-  <br/>
-  <label for="password">Password</label>
-  <br/>
-  <input type="password" id="password" name="user[password]" />
-  <br/>
-  <br/>
-  <input type="submit" value="Sign in">
-</form>
-<br/>
-<%= link_to "Register", register_path, class: 'btn btn-primary' %>
+<h4>I don't Have a Account</h4>
+<%= link_to "Register", register_path, class: 'btn btn-success' %>

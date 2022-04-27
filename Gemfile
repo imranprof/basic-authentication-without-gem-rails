@@ -29,6 +29,10 @@ gem "jbuilder"
 
 #for encrypt the password
 gem 'bcrypt'
+gem 'popper_js'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'bootstrap', '~> 5.1.3'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

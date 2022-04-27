@@ -1,16 +1,28 @@
-<h1>Register</h1>
+<div class="card">
+  <h4 class="card-header">Register</h4>
+  <div class="card-body">
+    <form action="/users" method = "post">
+      <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
 
-<form action="/users" method = "post">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token %>">
+      <label for="email">Enter A valid Email</label>
+      <br/>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" name="user[email]" value="<%= @user.email %>" placeholder="example@gmail.com">
+      </div>
 
-  <label for="email">Email</label>
-  <br/>
-  <input type="email" id="email" name="user[email]" value="<%= @user.email %>" />
+      <br/>
+      <div class="form-group">
+        <label for="password">Enter A password minimum of 6 character.</label>
+        <input type="password" class="form-control" id="password" name="user[password]" placeholder="Password">
+      </div>
+      <br/>
+      <button type="submit" class="btn btn-primary">Register</button>
 
-  <br/>
-  <label for="password">Password</label>
-  <br/>
-  <input type="password" id="password" name="user[password]" />
+    </form>
+  </div>
+</div>
 
-  <input type="submit" value="Register">
-</form>
+<h4>Have Account?</h4>
+<%= link_to "Sign In", sign_in_path, class: 'btn btn-success' %>
+
+

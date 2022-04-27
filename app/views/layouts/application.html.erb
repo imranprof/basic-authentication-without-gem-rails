@@ -16,12 +16,27 @@
   </head>
 
   <body>
-
+  <div class="container">
+    <%if notice %>
+      <%= render 'layouts/alerts' %>
+    <%end %>
 
     <% if current_user %>
-      User login as:  <%=  current_user.email%>
-      <%= link_to "Log Out", sign_out_path, class: 'btn btn-secondary'%>
+      <div class="card">
+        <div class="card-header">
+          Current User
+        </div>
+        <div class="card-body">
+          <%=  current_user.email%>
+          <%= link_to "Log Out", sign_out_path, class: 'btn btn-secondary'%>
+        </div>
+      </div>
+
     <%end %>
     <%= yield %>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
   </body>
 </html>

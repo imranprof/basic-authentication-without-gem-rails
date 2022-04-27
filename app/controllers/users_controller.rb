@@ -10,7 +10,9 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to posts_path
     else
-      render :new
+      #render :action => :new, :notice =>  "Invalid Email or Password less then 6 character."
+
+      redirect_to register_path, notice: "Invalid Email or Password less then 6 character."
     end
   end
 

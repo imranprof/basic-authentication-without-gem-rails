@@ -12,6 +12,11 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to posts_path
     else
+      #flash.now[:notice] = "Email or Password not valid! Try again.."
+
+      #flash.now[:notice] = "Email or Password not valid! Try again.."
+      #render turbo_stream: turbo_stream.update("flash", partial: "layouts/alerts")
+      #render :new
       redirect_to sign_in_path, notice: "Email or Password not valid! Try again.."
     end
     #then compare password
